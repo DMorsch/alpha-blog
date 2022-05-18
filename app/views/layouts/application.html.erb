@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>AlphaBlog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,10 +10,11 @@
   </head>
 
   <body class="d-flex flex-column">
-     <%= render 'layouts/navigation' %>
-    <% flash.each do |name, msg|%>
-      <%= msg %>
-    <%end%>
-    <%= yield %>
+    <%= render 'layouts/navigation' %>
+    <div id="page-content">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
